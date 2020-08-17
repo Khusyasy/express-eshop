@@ -3,15 +3,16 @@ include templates/header
 body
     .container-fluid
         .row
-            .col-sm-12.col-md-8.row
-                for product in products
-                    .card.col-sm-4.col-md-3.m-4(onClick=`location.href = 'product/${product.id}'`)
-                        img.card-img-top(src='/images/products/'+product.image, alt='product')
-                        .card-body
-                            h5.card-title #{product.name}
-                            p.card-text Price: #{product.price}
-                            p.card-text Stock: #{product.quantity}
-                            a.btn.btn-warning(href='addtocart/' + product.id) Add to Cart
+            .col-sm-12.col-md-8
+                .row
+                    for product in products
+                        .card.col-sm-2.col-md-3.m-4(onClick=`location.href = 'product/${product.id}'`)
+                            img.card-img-top(src='/images/products/'+product.image, alt='product')
+                            .card-body
+                                h5.card-title #{product.name}
+                                p.card-text Price: #{product.price}
+                                p.card-text Stock: #{product.quantity}
+                                a.btn.btn-warning(href='addtocart/' + product.id) Add to Cart
             .col-sm-12.col-md-4
                 h1 Sidebar
 
