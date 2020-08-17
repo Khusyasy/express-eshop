@@ -2,13 +2,17 @@ include templates/header
     title="hello"
 body
     .container
-
-        .card(style='width: 18rem;')
-            img.card-img-top(src='/images/products/'+"neon.png" alt='product')
-            .card-body
-                h5.card-title Card title
-                p.card-text
-                | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
-                a.btn.btn-primary(href='#') Go somewhere
+        .row
+            .col-md-8
+                for product in products
+                    .card(style='width: 18rem;')
+                        img.card-img-top(src='/images/products/'+product.image, alt='product')
+                        .card-body
+                            h5.card-title #{product.name}
+                            p.card-text Price: #{product.price}
+                            p.card-text Stock: #{product.quantity}
+                            a.btn.btn-primary(href='product/' + product.id) Details
+            .col-md-4
+                h1 WEHLAH
 
 include templates/footer

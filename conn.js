@@ -4,7 +4,7 @@ var con = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
-  database: "express_test"
+  database: "express_eshop"
 });
 
 con.connect(function (err){
