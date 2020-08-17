@@ -1,5 +1,14 @@
 include templates/header
     title="hello"
 body
-    h1 home
+    .container
+
+        .card(style='width: 18rem;')
+            img.card-img-top(src='/images/products/'+"neon.png" alt='product')
+            .card-body
+                h5.card-title Card title
+                p.card-text
+                | Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
+                a.btn.btn-primary(href='#') Go somewhere
+
 include templates/footer
