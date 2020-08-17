@@ -1,11 +1,11 @@
 include templates/header
-    title="hello"
+    title="Shop"
 body
     .container-fluid
         .row
             .col-sm-12.col-md-8.row
                 for product in products
-                    .card.col-sm-4.col-md-3.m-4(style='width: 18rem;', onClick=`location.href = 'product/${product.id}'`)
+                    .card.col-sm-4.col-md-3.m-4(onClick=`location.href = 'product/${product.id}'`)
                         img.card-img-top(src='/images/products/'+product.image, alt='product')
                         .card-body
                             h5.card-title #{product.name}
