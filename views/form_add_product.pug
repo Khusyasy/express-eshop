@@ -1,0 +1,30 @@
+include templates/header
+    title="Add Product"
+body
+    .container-fluid
+        .row
+            .col-sm-4.m-auto
+                h1 Add Product
+                form(action="/server/add/product" method="post" enctype="multipart/form-data")
+                    .form-group
+                        label(for="name") Name
+                        input.form-control#name(type="text" name="name" required)
+                    .form-group
+                        label(for="cat") Category
+                        select.form-control#cat( name="cat" required)
+                            for category in categories
+                                option(value=category.id) #{category.name}
+                    .form-group
+                        label(for="price") Price
+                        input.form-control#price(type="number" name="price" required)
+                    .form-group
+                        label(for="qty") Quantity
+                        input.form-control#qty(type="number" name="qty" required)
+                    .form-group
+                        label(for="img") Image
+                        br
+                        input#img(type="file" name="img" accept="image/*" )
+                    .form-group
+                        input.form-control.btn.btn-primary(type="submit", value="submit")
+                
+include templates/footer
