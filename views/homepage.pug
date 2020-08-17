@@ -1,18 +1,18 @@
 include templates/header
     title="hello"
 body
-    .container
+    .container-fluid
         .row
-            .col-md-8
+            .col-sm-12.col-md-8.row
                 for product in products
-                    .card(style='width: 18rem;')
+                    .card.col-sm-4.col-md-3.m-4(style='width: 18rem;', onClick=`location.href = 'product/${product.id}'`)
                         img.card-img-top(src='/images/products/'+product.image, alt='product')
                         .card-body
                             h5.card-title #{product.name}
                             p.card-text Price: #{product.price}
                             p.card-text Stock: #{product.quantity}
-                            a.btn.btn-primary(href='product/' + product.id) Details
-            .col-md-4
-                h1 WEHLAH
+                            a.btn.btn-warning(href='addtocart/' + product.id) Add to Cart
+            .col-sm-12.col-md-4
+                h1 Sidebar
 
 include templates/footer
