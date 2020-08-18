@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 100%;
+}
+body {
+    height: 100%;
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+}
+.clickable{
+    cursor: pointer;
+}
+textarea{
+    resize: none;
+}
+.isi_post{
+    height: 200px;
+}
